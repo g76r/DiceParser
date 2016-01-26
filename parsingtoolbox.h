@@ -29,7 +29,7 @@
 #include "booleancondition.h"
 #include "compositevalidator.h"
 #include "range.h"
-
+#include "variablemap.h"
 /**
  * @brief The ParsingToolBox is gathering many useful methods for dice parsing.
  * Its goal is to make the diceparser a bit lighter.
@@ -144,6 +144,8 @@ public:
 private:
         QMap<QString,BooleanCondition::LogicOperator>* m_logicOp;
         QMap<QString,CompositeValidator::LogicOperation>* m_logicOperation;
+
+        VariableMap* m_variableMap;
 };
 
 #endif // PARSINGTOOLBOX_H

@@ -27,7 +27,8 @@ add_executable(
     validator.cpp 
     compositevalidator.cpp
     die.cpp 
-    parsingtoolbox.cpp 
+    parsingtoolbox.cpp
+    variablemap.cpp
     dicealias.cpp
     result/result.cpp 
     result/scalarresult.cpp 

@@ -186,7 +186,34 @@ bool ParsingToolBox::readLogicOperation(QString& str,CompositeValidator::LogicOp
 
     return false;
 }
+bool ParsingToolBox::readVariable(QString& str,qint64& number)
+{
+    if(str.isEmpty())
+        return false;
+    if(NULL==m_variableMap)
+        return false;
 
+    if(str.startsWith("${"))
+    {
+        QString variable;
+        int i=0;
+
+        while(i<str.length() && ((str[i].isLetterOrNumber()) || (i==0) && (str[i].isLetter())) && str[i]!=QStringLiteral("}"))
+        {
+            variable+=str[i];
+            ++i;
+        }
+
+        if(variable.isEmpty())
+        {
+            return false;
+        }
+        str=str.remove(0,variable.size());
+        number=m_variableMap->getValue(variable);
+
+    }
+
+}
 bool ParsingToolBox::readNumber(QString& str, qint64& myNumber)
 {
     if(str.isEmpty())

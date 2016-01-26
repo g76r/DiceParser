@@ -9,6 +9,7 @@ SOURCES += $$PWD/diceparser.cpp \
     $$PWD/booleancondition.cpp \
     $$PWD/validator.cpp \
     $$PWD/die.cpp \
+    $$PWD/variablemap.cpp \
     $$PWD/result/result.cpp \
     $$PWD/result/scalarresult.cpp \
     $$PWD/parsingtoolbox.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     $$PWD/booleancondition.h \
     $$PWD/validator.h \
     $$PWD/die.h \
+    $$PWD/variablemap.h \
     $$PWD/result/result.h \
     $$PWD/result/scalarresult.h \
     $$PWD/parsingtoolbox.h \

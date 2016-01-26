@@ -33,7 +33,7 @@
 #include "booleancondition.h"
 #include "parsingtoolbox.h"
 #include "dicealias.h"
-
+#include "variablemap.h"
 
 typedef QPair<QList<quint64>,bool> DiceAndHighlight;
 typedef QList<DiceAndHighlight > ListDiceResult;
@@ -204,6 +204,12 @@ public:
     QStringList getAllDiceResult(bool& hasAlias);
 
     bool hasSeparator()const;
+    /**
+     * @brief setVariableMap
+     */
+    void setVariableMap(VariableMap*);
+    VariableMap *getVariableMap() const;
+
 private:
 
     /**
@@ -311,6 +317,7 @@ private:
     ParsingToolBox* m_parsingToolbox;
     QString m_helpPath;
     bool m_currentTreeHasSeparator;
+    VariableMap* m_variableMap;
 };
 
 #endif // DICEPARSER_H

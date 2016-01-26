@@ -43,10 +43,11 @@
 #define DEFAULT_FACES_NUMBER 10
 
 DiceParser::DiceParser()
-    : m_start(NULL),m_current(NULL)
+    : m_start(NULL),m_current(NULL),m_variableMap(NULL)
 {
     m_currentTreeHasSeparator =false;
     m_parsingToolbox = new ParsingToolBox();
+
 
     m_mapDiceOp = new QMap<QString,DiceOperator>();
 	m_mapDiceOp->insert(QStringLiteral("D"),D);
@@ -536,6 +537,11 @@ bool DiceParser::hasResultOfType(Result::RESULT_TYPE type, bool notthelast)
         result=result->getPrevious();
     }
     return scalarDone;
+}
+
+VariableMap *DiceParser::getVariableMap() const
+{
+    return m_variableMap;
 }
 qreal DiceParser::getSumOfDiceResult()
 {
